@@ -1,8 +1,9 @@
 module MiEnumerable
     def mi_each
-        for i in 0...self.length
-            yield(self[i])
-        end
+        #for i in 0...self.length
+        #    yield(self[i])
+        #end
+        self.each {|j| yield(j)}
     end 
 end
 
