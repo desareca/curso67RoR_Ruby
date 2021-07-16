@@ -6,22 +6,14 @@ class Humano
         @inteligencia = 3
         @sigilo = 3
         @salud = 100
-        self
     end
     # ataque
-    def ataque(n)
-        if n.class.ancestors[0]==Humano
-            n.salud -= 10
+    def ataque(obj)
+        if obj.class.ancestors.include?(Humano)
+            obj.salud -= 10
+            true
+        else
+            false
         end
-        self
     end
 end
-
-h1 = Humano.new
-h2 = Humano.new
-puts h1.inspect
-puts h2.inspect
-h1.ataque(h2) # humano_1 ataca a humano_2
-puts "\n"
-puts h1.inspect
-puts h2.inspect
